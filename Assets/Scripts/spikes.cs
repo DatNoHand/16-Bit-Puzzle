@@ -10,7 +10,7 @@ public class spikes : MonoBehaviour {
 
     // Knockback Stats
     public float knockDur = 0.002f;
-    public float knockPwr = 150;
+    public float knockPwr = 250;
 
     private void Start()
     {

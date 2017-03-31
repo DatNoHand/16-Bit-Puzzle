@@ -168,10 +168,12 @@ public class Player : MonoBehaviour {
 
         while (knockDur > timer)
         {
-            timer += Time.deltaTime;
             hasControl = false;
+            timer += Time.deltaTime;
             rb2d.AddForce(new Vector3(knockDir.x * (knockPwr / 2), knockDir.y * knockPwr, transform.position.z));
         }
+
+        if (knockDur < timer)
 
         hasControl = true;
 
