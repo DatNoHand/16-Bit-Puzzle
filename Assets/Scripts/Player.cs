@@ -188,7 +188,12 @@ public class Player : MonoBehaviour {
     	if (col.CompareTag("coin")){
 
     		Destroy(col.gameObject);
+    		curHealth += 1;
     		gm.points += coinWorth;
+    	}
+
+    	if (col.CompareTag("death")){
+    		Die();
     	}
     }
 }

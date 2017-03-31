@@ -52,7 +52,7 @@ namespace Tiled2Unity
         {
             foreach (var component in GameObject.FindObjectsOfType<Tiled2Unity.ImportBehaviour>())
             {
-                if (component.ImportWait_Textures.Contains(assetName, StringComparer.OrdinalIgnoreCase))
+                if (component.ImportWait_Textures.Contains(assetName))
                 {
                     yield return component;
                 }
@@ -64,7 +64,7 @@ namespace Tiled2Unity
         {
             foreach (var component in GameObject.FindObjectsOfType<Tiled2Unity.ImportBehaviour>())
             {
-                if (component.ImportWait_Materials.Contains(assetName, StringComparer.OrdinalIgnoreCase))
+                if (component.ImportWait_Materials.Contains(assetName))
                 {
                     yield return component;
                 }
@@ -76,7 +76,7 @@ namespace Tiled2Unity
         {
             foreach (var component in GameObject.FindObjectsOfType<Tiled2Unity.ImportBehaviour>())
             {
-                if (component.ImportWait_Meshes.Contains(assetName, StringComparer.OrdinalIgnoreCase))
+                if (component.ImportWait_Meshes.Contains(assetName))
                 {
                     return component;
                 }
@@ -90,7 +90,7 @@ namespace Tiled2Unity
         {
             foreach (var component in GameObject.FindObjectsOfType<Tiled2Unity.ImportBehaviour>())
             {
-                if (component.ImportWait_Prefabs.Contains(assetName, StringComparer.OrdinalIgnoreCase))
+                if (component.ImportWait_Prefabs.Contains(assetName))
                 {
                     return component;
                 }
@@ -103,7 +103,7 @@ namespace Tiled2Unity
         {
             foreach (var component in GameObject.FindObjectsOfType<Tiled2Unity.ImportBehaviour>())
             {
-                if (component.ImportingAssets.Contains(assetPath, StringComparer.OrdinalIgnoreCase))
+                if (component.ImportingAssets.Contains(assetPath, StringComparer.InvariantCultureIgnoreCase))
                 {
                     return true;
                 }
@@ -134,7 +134,7 @@ namespace Tiled2Unity
 
         public void ImportTiled2UnityAsset(string assetPath)
         {
-            if (!this.ImportingAssets.Contains(assetPath, StringComparer.OrdinalIgnoreCase))
+            if (!this.ImportingAssets.Contains(assetPath))
             {
                 this.ImportingAssets.Add(assetPath);
                 AssetDatabase.ImportAsset(assetPath, ImportAssetOptions.ForceSynchronousImport);

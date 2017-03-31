@@ -19,7 +19,7 @@ namespace Tiled2Unity
             foreach (var importComponent in ImportBehaviour.EnumerateImportBehaviors_ByWaitingTexture(asset))
             {
                 // The texture has finished loading. Keep track of that status.
-                if (!importComponent.ImportComplete_Textures.Contains(asset, StringComparer.OrdinalIgnoreCase))
+                if (!importComponent.ImportComplete_Textures.Contains(asset))
                 {
                     importComponent.ImportComplete_Textures.Add(asset);
                 }
@@ -42,7 +42,7 @@ namespace Tiled2Unity
                 byte[] bytes = ImportUtils.Base64ToBytes(data);
 
                 // Keep track that we are importing this texture
-                if (!importComponent.ImportWait_Textures.Contains(filename, StringComparer.OrdinalIgnoreCase))
+                if (!importComponent.ImportWait_Textures.Contains(filename))
                 {
                     importComponent.ImportWait_Textures.Add(filename);
                 }

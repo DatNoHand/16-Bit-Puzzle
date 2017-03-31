@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"to",
+				"ToString()\tstring"
+			],
+			[
 				"aufgabe",
 				"aufgabe_b"
 			],
@@ -27,6 +31,33 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "Assets/Scripts/Player.cs",
+			"settings":
+			{
+				"buffer_size": 4831,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Scripts/GroundCheck.cs",
+			"settings":
+			{
+				"buffer_size": 680,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Scripts/gameMaster.cs",
+			"settings":
+			{
+				"buffer_size": 237,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -36,9 +67,13 @@
 	"command_palette":
 	{
 		"height": 173.0,
-		"last_filter": "package insta",
+		"last_filter": "Package insta",
 		"selected_items":
 		[
+			[
+				"Package insta",
+				"Package Control: Install Package"
+			],
 			[
 				"package insta",
 				"Package Control: Install Package"
@@ -64,7 +99,7 @@
 				"Install Package Control"
 			]
 		],
-		"width": 432.0
+		"width": 400.0
 	},
 	"console":
 	{
@@ -178,7 +213,7 @@
 	],
 	"find":
 	{
-		"height": 28.0
+		"height": 70.0
 	},
 	"find_in_files":
 	{
@@ -273,14 +308,135 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Assets/Scripts/Player.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4831,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4729,
+								4729
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"0,5": "Using directive is not used by code and can be removed safely.",
+								"184,200": "Name should have prefix '_'. (Rule 'Fields').",
+								"203,208": "Initializing field by default value is redundant",
+								"226,236": "Name should have prefix '_'. (Rule 'Fields').",
+								"239,244": "Initializing field by default value is redundant",
+								"26,31": "Using directive is not used by code and can be removed safely.",
+								"262,279": "Name should have prefix '_'. (Rule 'Fields').",
+								"282,287": "Initializing field by default value is redundant",
+								"321,329": "Name should have prefix '_'. (Rule 'Fields').",
+								"352,357": "Name should have prefix '_'. (Rule 'Fields').",
+								"382,388": "Name should have prefix '_'. (Rule 'Fields').",
+								"434,442": "Name should have prefix '_'. (Rule 'Fields').",
+								"4519,4521": "Convert to '|=' expresssion",
+								"460,473": "Name should have prefix '_'. (Rule 'Fields').",
+								"4619,4629": "Parameter can be declared with base type",
+								"498,508": "Name should have prefix '_'. (Rule 'Fields').",
+								"511,516": "Initializing field by default value is redundant",
+								"534,547": "Name should have prefix '_'. (Rule 'Fields').",
+								"577,583": "Name should have prefix '_'. (Rule 'Fields').",
+								"586,591": "Initializing field by default value is redundant",
+								"633,645": "Name should have prefix '_'. (Rule 'Fields').",
+								"677,686": "Name should have prefix '_'. (Rule 'Fields').",
+								"703,712": "Name should have prefix '_'. (Rule 'Fields').",
+								"733,742": "Name should have prefix '_'. (Rule 'Fields')."
+							},
+							"syntax": "Packages/C#/C#.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3272.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Assets/Scripts/GroundCheck.cs",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 680,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Assets/Scripts/gameMaster.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 237,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								159
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"119,129": "Name should have prefix '_'. (Rule 'Fields').",
+								"143,154": "Name should have prefix '_'. (Rule 'Fields').",
+								"55,65": "'gameMaster' should start with an upper case letter. (Rule 'Types')",
+								"98,104": "Name should have prefix '_'. (Rule 'Fields')."
+							},
+							"syntax": "Packages/C#/C#.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 30.0
 	},
 	"input":
 	{
@@ -309,15 +465,23 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 130.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
+	},
+	"output.variable_get":
+	{
+		"height": 150.0
 	},
 	"pinned_build_system": "",
 	"project": "16-bit.sublime-project",
 	"replace":
 	{
-		"height": 52.0
+		"height": 56.0
 	},
 	"save_all_on_build": true,
 	"select_file":
