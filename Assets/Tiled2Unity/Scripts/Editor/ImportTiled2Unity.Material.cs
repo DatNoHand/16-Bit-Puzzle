@@ -26,7 +26,7 @@ namespace Tiled2Unity
             foreach (var importComponent in ImportBehaviour.EnumerateImportBehaviors_ByWaitingMaterial(asset))
             {
                 // The material has finished loading. Keep track of that status.
-                if (!importComponent.ImportComplete_Materials.Contains(asset, StringComparer.OrdinalIgnoreCase))
+                if (!importComponent.ImportComplete_Materials.Contains(asset))
                 {
                     importComponent.ImportComplete_Materials.Add(asset);
                 }
@@ -93,13 +93,13 @@ namespace Tiled2Unity
                 string materialFile = System.IO.Path.GetFileName(materialPath);
 
                 // Keep track that we importing this material
-                if (!importComponent.ImportWait_Materials.Contains(materialFile, StringComparer.OrdinalIgnoreCase))
+                if (!importComponent.ImportWait_Materials.Contains(materialFile))
                 {
                     importComponent.ImportWait_Materials.Add(materialFile);
                 }
 
                 // Create the material
-                UnityEngine.Material material = CreateMaterialFromXml(xmlTexture, importComponent);
+                UnityEngine.Material material = CreateMaterialFromXml(xmlTexture);
 
                 // Assign the texture to the material
                 {
@@ -123,13 +123,13 @@ namespace Tiled2Unity
                 string materialFile = System.IO.Path.GetFileName(materialPath);
 
                 // Keep track that we importing this material
-                if (!importComponent.ImportWait_Materials.Contains(materialFile, StringComparer.OrdinalIgnoreCase))
+                if (!importComponent.ImportWait_Materials.Contains(materialFile))
                 {
                     importComponent.ImportWait_Materials.Add(materialFile);
                 }
 
                 // Create the material and assign the texture
-                UnityEngine.Material material = CreateMaterialFromXml(xmlInternal, importComponent);
+                UnityEngine.Material material = CreateMaterialFromXml(xmlInternal);
                 AssignTextureAssetToMaterial(material, materialFile, textureAsset, importComponent);
 
                 ImportUtils.ReadyToWrite(materialPath);

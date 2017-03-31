@@ -32,9 +32,7 @@ namespace Tiled2Unity
             if (path.Length != 0)
             {
                 List<string> packageFiles = new List<string>();
-
-                // Export all C# files, shaders, text files, and some select materials
-                packageFiles.AddRange(EnumerateAssetFilesAt("Assets/Tiled2Unity",".cs", ".shader", ".txt", "t2uSprite-Depth.mat", "t2uSprite-DiffuseDepth.mat"));
+                packageFiles.AddRange(EnumerateAssetFilesAt("Assets/Tiled2Unity", ".cs", ".shader", ".txt"));
                 AssetDatabase.ExportPackage(packageFiles.ToArray(), path);
             }
         }
@@ -51,11 +49,11 @@ namespace Tiled2Unity
         //    DeleteAssetsAt("Assets/Tiled2Unity/Textures");
         //}
 
-        private static IEnumerable<string> EnumerateAssetFilesAt(string dir, params string[] endPatterns)
+        private static IEnumerable<string> EnumerateAssetFilesAt(string dir, params string[] extensions)
         {
             foreach (string f in Directory.GetFiles(dir))
             {
-                if (endPatterns.Any(pat => f.EndsWith(pat, true, null)))
+                if (extensions.Any(ext => String.Compare(ext, System.IO.Path.GetExtension(f), true) == 0))
                 {
                     yield return f;
                 }
@@ -63,7 +61,7 @@ namespace Tiled2Unity
 
             foreach (string d in Directory.GetDirectories(dir))
             {
-                foreach (string f in EnumerateAssetFilesAt(d, endPatterns))
+                foreach (string f in EnumerateAssetFilesAt(d, extensions))
                 {
                     yield return f;
                 }
@@ -83,12 +81,6 @@ namespace Tiled2Unity
 
                 // Just to be safe. Do not remove scripts.
                 if (f.EndsWith(".cs", true, null))
-                    continue;
-
-                // Do not remove special materials
-                if (f.EndsWith("t2uSprite-Depth.mat", true, null))
-                    continue;
-                if (f.EndsWith("t2uSprite-DiffuseDepth.mat", true, null))
                     continue;
 
                 AssetDatabase.DeleteAsset(f);

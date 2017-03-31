@@ -26,7 +26,7 @@ namespace Tiled2Unity
             if (importComponent != null)
             {
                 // The mesh has finished loading. Keep track of that status.
-                if (!importComponent.ImportComplete_Meshes.Contains(asset, StringComparer.OrdinalIgnoreCase))
+                if (!importComponent.ImportComplete_Meshes.Contains(asset))
                 {
                     importComponent.ImportComplete_Meshes.Add(asset);
                 }
@@ -49,7 +49,7 @@ namespace Tiled2Unity
                 string data = xmlMesh.Value;
 
                 // Keep track of mesh we're going to import
-                if (!importComponent.ImportWait_Meshes.Contains(file, StringComparer.OrdinalIgnoreCase))
+                if (!importComponent.ImportWait_Meshes.Contains(file))
                 {
                     importComponent.ImportWait_Meshes.Add(file);
                 }

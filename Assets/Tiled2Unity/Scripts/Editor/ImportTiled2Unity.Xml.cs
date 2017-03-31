@@ -82,10 +82,10 @@ namespace Tiled2Unity
             }
         }
 
-        private UnityEngine.Material CreateMaterialFromXml(XElement xml, Tiled2Unity.ImportBehaviour importComponent)
+        private UnityEngine.Material CreateMaterialFromXml(XElement xml)
         {
             // Does this material support alpha color key?
-            bool useColorKey = xml.Attribute("alphaColorKey") != null;
+            string htmlColor = ImportUtils.GetAttributeAsString(xml, "alphaColorKey", "");
             bool usesDepthShader = ImportUtils.GetAttributeAsBoolean(xml, "usesDepthShaders", false);
 
             // Determine which shader we sould be using
@@ -102,33 +102,28 @@ namespace Tiled2Unity
             }
 
             // Are we using color key shaders?
-            Color keyColor = Color.black;
-            if (useColorKey)
+            Color? keyColor = null;
+            if (!String.IsNullOrEmpty(htmlColor))
             {
-                keyColor = ImportUtils.GetAttributeAsColor(xml, "alphaColorKey");
                 shaderName += " Color Key";
+
+                // Sometimes Tiled saves out color without the leading # but we expect it to be there
+                if (!htmlColor.StartsWith("#"))
+                {
+                    htmlColor = "#" + htmlColor;
+                }
+
+                byte r = byte.Parse(htmlColor.Substring(1, 2), System.Globalization.NumberStyles.HexNumber);
+                byte g = byte.Parse(htmlColor.Substring(3, 2), System.Globalization.NumberStyles.HexNumber);
+                byte b = byte.Parse(htmlColor.Substring(5, 2), System.Globalization.NumberStyles.HexNumber);
+                keyColor = new Color32(r, g, b, 255);
             }
 
-            // Try creating the material with the right shader. Fall back to the built-in Sprites/Default shader if there's a problem.
-            UnityEngine.Material material = null;
-            try
-            {
-                material = new UnityEngine.Material(UnityEngine.Shader.Find(shaderName));
-            }
-            catch (Exception e)
-            {
-                importComponent.RecordError("Error creating material with shader '{0}'. {1}", shaderName, e.Message);
-            }
+            UnityEngine.Material material = new UnityEngine.Material(UnityEngine.Shader.Find(shaderName));
 
-            if (material == null)
+            if (keyColor.HasValue)
             {
-                importComponent.RecordWarning("Using default sprite shader for material");
-                material = new UnityEngine.Material(UnityEngine.Shader.Find("Sprites/Default"));
-            }
-
-            if (useColorKey)
-            {
-                material.SetColor("_AlphaColorKey", keyColor);
+                material.SetColor("_AlphaColorKey", keyColor.Value);
             }
 
             return material;
