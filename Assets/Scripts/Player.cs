@@ -99,11 +99,13 @@ public class Player : MonoBehaviour {
     }
 
     private void FixedUpdate()
-    {        
+    {
         // Moving the Player
-
-        float h = Input.GetAxis("Horizontal");
-        rb2d.AddForce((Vector2.right * speed) * h);
+        if (hasControl)
+        {
+            float h = Input.GetAxis("Horizontal");
+            rb2d.AddForce((Vector2.right * speed) * h);
+        }
 
         // Limiting the Speed of the Player
 
