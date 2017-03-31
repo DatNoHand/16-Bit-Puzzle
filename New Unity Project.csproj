@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\bullet.cs" />
     <Compile Include="Assets\Scripts\cameraFollow.cs" />
     <Compile Include="Assets\Scripts\door.cs" />
+    <Compile Include="Assets\Scripts\gameMaster.cs" />
     <Compile Include="Assets\Scripts\hud.cs" />
     <Compile Include="Assets\Scripts\playerAttack.cs" />
     <Compile Include="Assets\Scripts\spikes.cs" />
