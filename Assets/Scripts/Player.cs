@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
     public bool canDoubleJump = true;
     public bool hasControl = false;
     public bool canTakeDamage = true;
+    public bool canAttack = true;
     
     public bool gotHit = false;
     
@@ -56,14 +57,43 @@ public class Player : MonoBehaviour {
 
             // Flipping the Player Sprite
 
-            if (Input.GetAxis("Horizontal") < -0.1f)
+        if (Input.GetAxis("Horizontal") < -0.1f)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        if (Input.GetAxis("Horizontal") > 0.1f)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+
+        // Moving the Player
+        if (hasControl)
+        {
+            float h = Input.GetAxis("Horizontal");
+            rb2d.AddForce((Vector2.right * speed) * h);
+
+            // Jump Function
+
+            if (Input.GetButtonDown("Jump"))
             {
-                transform.localScale = new Vector3(-1, 1, 1);
+                if (canJumpInfinitely)
+                {
+                    canDoubleJump = false;
+                    rb2d.AddForce(Vector2.up * jmpPwr);
+                }
+                else if (onGround)
+                {
+                    rb2d.AddForce(Vector2.up * jmpPwr);
+                    canDoubleJump = true;
+                }
+                else if (canDoubleJump)
+                    {
+                        canDoubleJump = false;
+                        rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
+                        rb2d.AddForce(Vector2.up * jmpPwr / 1.0f);
+                    }
             }
-            if (Input.GetAxis("Horizontal") > 0.1f)
-            {
-                transform.localScale = new Vector3(1, 1, 1);
-            }
+        }
 
         // Health Management
         if (curHealth > maxHealth)
@@ -78,37 +108,7 @@ public class Player : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        // Moving the Player
-        if (hasControl)
-        {
-            float h = Input.GetAxis("Horizontal");
-            rb2d.AddForce((Vector2.right * speed) * h);
-
-            // Jump Function
-
-            if (Input.GetButtonDown("Jump"))
-            {
-                if (canJumpInfinitely)
-                {
-                    canDoubleJump = false;
-                    rb2d.AddForce(Vector2.up * jmpPwr / 1.5f);
-                }
-                else if (onGround)
-                {
-                    rb2d.AddForce(Vector2.up * jmpPwr);
-                    canDoubleJump = true;
-                }
-                else
-                {
-                    if (canDoubleJump)
-                    {
-                        canDoubleJump = false;
-                        rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
-                        rb2d.AddForce(Vector2.up * jmpPwr / 1.5f);
-                    }
-                }
-            }
-        }
+        
 
         // Limiting the Speed of the Player
 
