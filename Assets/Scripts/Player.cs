@@ -62,6 +62,25 @@ public class Player : MonoBehaviour {
                 transform.localScale = new Vector3(1, 1, 1);
             }
 
+        // Health Management
+        if (curHealth > maxHealth)
+        {
+            curHealth = maxHealth;
+        }
+        if (curHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        // Moving the Player
+        if (hasControl)
+        {
+            float h = Input.GetAxis("Horizontal");
+            rb2d.AddForce((Vector2.right * speed) * h);
+
             // Jump Function
 
             if (Input.GetButtonDown("Jump"))
@@ -85,25 +104,8 @@ public class Player : MonoBehaviour {
                         rb2d.AddForce(Vector2.up * jmpPwr / 1.5f);
                     }
                 }
+            }
         }
-
-        // Health Management
-        if (curHealth > maxHealth)
-        {
-            curHealth = maxHealth;
-        }
-        if (curHealth <= 0)
-        {
-            Die();
-        }
-    }
-
-    private void FixedUpdate()
-    {        
-        // Moving the Player
-
-        float h = Input.GetAxis("Horizontal");
-        rb2d.AddForce((Vector2.right * speed) * h);
 
         // Limiting the Speed of the Player
 
@@ -125,7 +127,7 @@ public class Player : MonoBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    // Damage Function with optional 
+    // Damage Function with optional Invincibility
     public void Damage(int dmg, int afterHitTime)
     {
         if (invincible) { return; }

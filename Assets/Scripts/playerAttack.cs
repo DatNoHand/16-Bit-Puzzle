@@ -16,7 +16,7 @@ public class playerAttack : MonoBehaviour {
     private void Awake()
     {
         anim = gameObject.GetComponent<Animator>();
-        attackTrigger.enabled = false;
+    
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
