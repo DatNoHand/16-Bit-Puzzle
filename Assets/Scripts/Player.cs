@@ -35,10 +35,12 @@ public class Player : MonoBehaviour {
     // References
     private Rigidbody2D rb2d;
     private Animator anim;
+    private gameMaster gm;
 
 	void Start () {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
+        gm = gameObject.FindGameObjectWithTag("GameMaster").GetComponent<gameMaster>();
 
         // Healing the Player
         curHealth = maxHealth;
@@ -178,5 +180,14 @@ public class Player : MonoBehaviour {
         hasControl = true;
 
         return;
+    }
+
+    void OnTriggerEnter2D(Collider2D col){
+    	
+    	if (col.CompareTag("Coid")){
+
+    		Destroy(col.gameObject);
+    		gm.points += 1;
+    	}
     }
 }
