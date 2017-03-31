@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"attackCool",
+				"attackCooldown\tfloat"
+			],
+			[
+				"ca",
+				"canAttack\tbool"
+			],
+			[
 				"to",
 				"ToString()\tstring"
 			],
@@ -35,7 +43,7 @@
 			"file": "Assets/Scripts/Player.cs",
 			"settings":
 			{
-				"buffer_size": 4831,
+				"buffer_size": 4780,
 				"encoding": "UTF-8 with BOM",
 				"line_ending": "Windows"
 			}
@@ -44,7 +52,7 @@
 			"file": "Assets/Scripts/GroundCheck.cs",
 			"settings":
 			{
-				"buffer_size": 680,
+				"buffer_size": 746,
 				"encoding": "UTF-8 with BOM",
 				"line_ending": "Windows"
 			}
@@ -124,6 +132,8 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/playerAttack.cs",
+		"/C/Program Files/Git/mingw64/share/doc/git-doc/git-merge.html",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/16-bit.sublime-project",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/Player.cs",
 		"/C/Users/Gabe/Documents/OneDrive/Schule/WLA/03-20-2017/php/Übung 4/index.php",
@@ -227,6 +237,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"onground",
+			"jump",
+			"attack",
 			">\n",
 			"spawn",
 			"weakness",
@@ -308,7 +321,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -317,19 +330,20 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4831,
+						"buffer_size": 4780,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4729,
-								4729
+								2607,
+								2607
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
 							"oops":
 							{
 								"0,5": "Using directive is not used by code and can be removed safely.",
@@ -344,47 +358,60 @@
 								"352,357": "Name should have prefix '_'. (Rule 'Fields').",
 								"382,388": "Name should have prefix '_'. (Rule 'Fields').",
 								"434,442": "Name should have prefix '_'. (Rule 'Fields').",
-								"4519,4521": "Convert to '|=' expresssion",
+								"4468,4470": "Convert to '|=' expresssion",
+								"4568,4578": "Parameter can be declared with base type",
 								"460,473": "Name should have prefix '_'. (Rule 'Fields').",
-								"4619,4629": "Parameter can be declared with base type",
 								"498,508": "Name should have prefix '_'. (Rule 'Fields').",
 								"511,516": "Initializing field by default value is redundant",
 								"534,547": "Name should have prefix '_'. (Rule 'Fields').",
-								"577,583": "Name should have prefix '_'. (Rule 'Fields').",
-								"586,591": "Initializing field by default value is redundant",
-								"633,645": "Name should have prefix '_'. (Rule 'Fields').",
-								"677,686": "Name should have prefix '_'. (Rule 'Fields').",
-								"703,712": "Name should have prefix '_'. (Rule 'Fields').",
-								"733,742": "Name should have prefix '_'. (Rule 'Fields')."
+								"572,581": "Name should have prefix '_'. (Rule 'Fields').",
+								"611,617": "Name should have prefix '_'. (Rule 'Fields').",
+								"620,625": "Initializing field by default value is redundant",
+								"667,679": "Name should have prefix '_'. (Rule 'Fields').",
+								"711,720": "Name should have prefix '_'. (Rule 'Fields').",
+								"737,746": "Name should have prefix '_'. (Rule 'Fields').",
+								"767,776": "Name should have prefix '_'. (Rule 'Fields')."
 							},
 							"syntax": "Packages/C#/C#.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3272.0,
+						"translation.y": 1260.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
 					"file": "Assets/Scripts/GroundCheck.cs",
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 680,
+						"buffer_size": 746,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								572,
+								572
 							]
 						],
 						"settings":
 						{
+							"oops":
+							{
+								"0,5": "Using directive is not used by code and can be removed safely.",
+								"26,31": "Using directive is not used by code and can be removed safely.",
+								"284,294": "Parameter can be declared with base type",
+								"314,316": "Convert to '|=' expresssion",
+								"432,447": "Method 'OnTriggerStay2D' has the same with 'OnTriggerEnter2D'",
+								"448,458": "Parameter can be declared with base type",
+								"478,480": "Convert to '|=' expresssion",
+								"612,622": "Parameter can be declared with base type",
+								"642,644": "Convert to '&=' expresssion"
+							},
 							"syntax": "Packages/C#/C#.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
@@ -393,7 +420,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -428,7 +455,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
