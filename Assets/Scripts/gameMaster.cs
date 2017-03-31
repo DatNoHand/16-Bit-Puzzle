@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class gameMaster : MonoBehaviour {
 	
 	public int points;
 	public Text pointsText;
+	public int scoreLength = 9;
 
 	void Update(){
-		
-		pointsText.text = ("Points: " + points);
+
+		pointsText.text = ""+points.ToString("00000000");
 	}
 	
 }

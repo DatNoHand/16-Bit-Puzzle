@@ -31,6 +31,7 @@ public class Player : MonoBehaviour {
     // Stats
     public int curHealth;
     public int maxHealth = 5;
+    public int coinWorth = 25;
 
     // References
     private Rigidbody2D rb2d;
@@ -40,7 +41,7 @@ public class Player : MonoBehaviour {
 	void Start () {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
-        gm = gameObject.FindGameObjectWithTag("GameMaster").GetComponent<gameMaster>();
+        gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<gameMaster>();
 
         // Healing the Player
         curHealth = maxHealth;
@@ -141,7 +142,7 @@ public class Player : MonoBehaviour {
                 Die();
                 return;
             }
-            else if (hasInfiniteLives)
+            if (hasInfiniteLives)
             {
                 dmg = 0;
             }
@@ -184,10 +185,10 @@ public class Player : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col){
     	
-    	if (col.CompareTag("Coid")){
+    	if (col.CompareTag("coin")){
 
     		Destroy(col.gameObject);
-    		gm.points += 1;
+    		gm.points += coinWorth;
     	}
     }
 }
