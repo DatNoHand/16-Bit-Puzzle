@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"Scene",
+				"SceneManager\tSceneManager"
+			],
+			[
+				"Sc",
+				"SceneManagement\tSceneManagement"
+			],
+			[
+				"Unit",
+				"UnityEngine\tUnityEngine"
+			],
+			[
 				"getcom",
 				"GetComponent<T>()\tT"
 			],
@@ -113,11 +125,17 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/Player.cs",
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/Fading.cs",
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/FadeScene.cs",
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/FadeObjectInOut.cs",
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/SceneFader.cs",
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/FadeInOut.cs",
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/attackTrigger.cs",
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Temp/Compiled-Sprites-Default.shader",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/GroundCheck.cs",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/playerAttack.cs",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/gameMaster.cs",
-		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/Player.cs",
-		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/attackTrigger.cs",
 		"/C/Program Files/Git/mingw64/share/doc/git-doc/git-merge.html",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/16-bit.sublime-project",
 		"/C/Users/Gabe/Documents/OneDrive/Schule/WLA/03-20-2017/php/Übung 4/index.php",
@@ -220,6 +238,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"global",
 			"speed",
 			"gamemaster",
 			"gm",

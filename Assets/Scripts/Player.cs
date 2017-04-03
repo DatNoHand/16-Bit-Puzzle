@@ -11,7 +11,7 @@ public class Player : MonoBehaviour {
     public bool canJumpInfinitely = false;
 
     // Floats
-    public float maxSpeed = 4;
+    public float maxSpeed = 4f;
     public float speed = 50f;
     public float jmpPwr = 200f;
     
@@ -62,22 +62,22 @@ public class Player : MonoBehaviour {
         anim.SetBool("canTakeDamage", canTakeDamage);
         anim.SetBool("gotHit", gotHit);
 
-            // Flipping the Player Sprite
-
-        if (Input.GetAxis("Horizontal") < -0.1f)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        if (Input.GetAxis("Horizontal") > 0.1f)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-
         // Moving the Player
         if (hasControl)
         {
             float h = Input.GetAxis("Horizontal");
             rb2d.AddForce((Vector2.right * speed) * h);
+
+            // Flipping the Player Sprite
+
+        	if (Input.GetAxis("Horizontal") < -0.1f)
+        	{
+        	    transform.localScale = new Vector3(-1, 1, 1);
+        	}
+        	if (Input.GetAxis("Horizontal") > 0.1f)
+        	{
+        	    transform.localScale = new Vector3(1, 1, 1);
+        	}
 
             // Jump Function
 
@@ -123,8 +123,6 @@ public class Player : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        
-
         // Limiting the Speed of the Player
 
         if (rb2d.velocity.x > maxSpeed)
