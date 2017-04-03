@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class playerAttack : MonoBehaviour {
 
@@ -16,7 +18,6 @@ public class playerAttack : MonoBehaviour {
     private void Awake()
     {
         anim = gameObject.GetComponent<Animator>();
-    
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 

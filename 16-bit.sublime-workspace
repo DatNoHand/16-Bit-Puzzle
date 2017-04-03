@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"getcom",
+				"GetComponent<T>()\tT"
+			],
+			[
+				"FindGame",
+				"FindGameObjectWithTag(string tag)\tGameObject"
+			],
+			[
 				"attackCool",
 				"attackCooldown\tfloat"
 			],
@@ -39,33 +47,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "Assets/Scripts/Player.cs",
-			"settings":
-			{
-				"buffer_size": 4780,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Assets/Scripts/GroundCheck.cs",
-			"settings":
-			{
-				"buffer_size": 746,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Assets/Scripts/gameMaster.cs",
-			"settings":
-			{
-				"buffer_size": 237,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -132,13 +113,15 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/GroundCheck.cs",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/playerAttack.cs",
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/gameMaster.cs",
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/Player.cs",
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/attackTrigger.cs",
 		"/C/Program Files/Git/mingw64/share/doc/git-doc/git-merge.html",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/16-bit.sublime-project",
-		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/Player.cs",
 		"/C/Users/Gabe/Documents/OneDrive/Schule/WLA/03-20-2017/php/Übung 4/index.php",
 		"/C/Users/Gabe/Documents/OneDrive/Schule/WLA/03-20-2017/php/Übung 4/style.css",
-		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/gameMaster.cs",
 		"/C/Users/Gabe/Documents/OneDrive/Schule/WLA/03-20-2017/php/Übung 2.php",
 		"/C/Users/Gabe/Documents/OneDrive/Schule/WLA/03-20-2017/php/Übung 4/vorlage.php",
 		"/C/Users/Gabe/Documents/OneDrive/Schule/WLA/03-20-2017/php/Übung 3/Übung 3.php",
@@ -237,6 +220,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"speed",
+			"gamemaster",
+			"gm",
 			"onground",
 			"jump",
 			"attack",
@@ -321,149 +307,14 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "Assets/Scripts/Player.cs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4780,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2607,
-								2607
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
-							"oops":
-							{
-								"0,5": "Using directive is not used by code and can be removed safely.",
-								"184,200": "Name should have prefix '_'. (Rule 'Fields').",
-								"203,208": "Initializing field by default value is redundant",
-								"226,236": "Name should have prefix '_'. (Rule 'Fields').",
-								"239,244": "Initializing field by default value is redundant",
-								"26,31": "Using directive is not used by code and can be removed safely.",
-								"262,279": "Name should have prefix '_'. (Rule 'Fields').",
-								"282,287": "Initializing field by default value is redundant",
-								"321,329": "Name should have prefix '_'. (Rule 'Fields').",
-								"352,357": "Name should have prefix '_'. (Rule 'Fields').",
-								"382,388": "Name should have prefix '_'. (Rule 'Fields').",
-								"434,442": "Name should have prefix '_'. (Rule 'Fields').",
-								"4468,4470": "Convert to '|=' expresssion",
-								"4568,4578": "Parameter can be declared with base type",
-								"460,473": "Name should have prefix '_'. (Rule 'Fields').",
-								"498,508": "Name should have prefix '_'. (Rule 'Fields').",
-								"511,516": "Initializing field by default value is redundant",
-								"534,547": "Name should have prefix '_'. (Rule 'Fields').",
-								"572,581": "Name should have prefix '_'. (Rule 'Fields').",
-								"611,617": "Name should have prefix '_'. (Rule 'Fields').",
-								"620,625": "Initializing field by default value is redundant",
-								"667,679": "Name should have prefix '_'. (Rule 'Fields').",
-								"711,720": "Name should have prefix '_'. (Rule 'Fields').",
-								"737,746": "Name should have prefix '_'. (Rule 'Fields').",
-								"767,776": "Name should have prefix '_'. (Rule 'Fields')."
-							},
-							"syntax": "Packages/C#/C#.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1260.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "Assets/Scripts/GroundCheck.cs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 746,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								572,
-								572
-							]
-						],
-						"settings":
-						{
-							"oops":
-							{
-								"0,5": "Using directive is not used by code and can be removed safely.",
-								"26,31": "Using directive is not used by code and can be removed safely.",
-								"284,294": "Parameter can be declared with base type",
-								"314,316": "Convert to '|=' expresssion",
-								"432,447": "Method 'OnTriggerStay2D' has the same with 'OnTriggerEnter2D'",
-								"448,458": "Parameter can be declared with base type",
-								"478,480": "Convert to '|=' expresssion",
-								"612,622": "Parameter can be declared with base type",
-								"642,644": "Convert to '&=' expresssion"
-							},
-							"syntax": "Packages/C#/C#.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Assets/Scripts/gameMaster.cs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 237,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								159
-							]
-						],
-						"settings":
-						{
-							"oops":
-							{
-								"119,129": "Name should have prefix '_'. (Rule 'Fields').",
-								"143,154": "Name should have prefix '_'. (Rule 'Fields').",
-								"55,65": "'gameMaster' should start with an upper case letter. (Rule 'Types')",
-								"98,104": "Name should have prefix '_'. (Rule 'Fields')."
-							},
-							"syntax": "Packages/C#/C#.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 30.0
+		"height": 32.0
 	},
 	"input":
 	{
@@ -508,7 +359,7 @@
 	"project": "16-bit.sublime-project",
 	"replace":
 	{
-		"height": 56.0
+		"height": 60.0
 	},
 	"save_all_on_build": true,
 	"select_file":

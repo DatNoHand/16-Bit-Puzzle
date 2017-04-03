@@ -33,6 +33,13 @@ public class Player : MonoBehaviour {
     public int curHealth;
     public int maxHealth = 5;
     public int coinWorth = 25;
+    public int level = 0;
+
+    // Level up criteria
+    public int pointsForLevel1 = 50;
+    public int pointsForLevel2 = 100;
+    public int pointsForLevel3 = 150;
+    public int pointsForLevel4 = 200;
 
     // References
     private Rigidbody2D rb2d;
@@ -93,6 +100,14 @@ public class Player : MonoBehaviour {
                         rb2d.AddForce(Vector2.up * jmpPwr / 1.0f);
                     }
             }
+        }
+
+        switch (level){
+        	case 0: break;
+        	case 1: break;
+        	case 2: break;
+        	case 3: break;
+        	case 4: break;
         }
 
         // Health Management
