@@ -46,10 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Buttons.cs" />
      <Compile Include="Assets\Scripts\Fading.cs" />
      <Compile Include="Assets\Scripts\GameControl.cs" />
      <Compile Include="Assets\Scripts\GroundCheck.cs" />
-     <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\attackCone.cs" />
      <Compile Include="Assets\Scripts\attackTrigger.cs" />
@@ -57,7 +57,6 @@
      <Compile Include="Assets\Scripts\cameraFollow.cs" />
      <Compile Include="Assets\Scripts\dontDestroyonLoad.cs" />
      <Compile Include="Assets\Scripts\door.cs" />
-     <Compile Include="Assets\Scripts\mainMenuOptions.cs" />
      <Compile Include="Assets\Scripts\playerAttack.cs" />
      <Compile Include="Assets\Scripts\spikes.cs" />
      <Compile Include="Assets\Scripts\turret.cs" />

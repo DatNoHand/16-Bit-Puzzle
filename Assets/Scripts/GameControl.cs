@@ -22,8 +22,8 @@ public class GameControl : MonoBehaviour {
 	public bool paused;
 
 	public GameObject hud;
-	public GameObject ui;
 	public GameObject startUI;
+	public GameObject pauseUI;
 
 	// Stats
 	public int curHealth;
@@ -47,7 +47,6 @@ public class GameControl : MonoBehaviour {
 		levelText = GameObject.Find("levelText").GetComponent<Text>();
 
 		hud = GameObject.Find("HUD");
-		ui = GameObject.Find("UI");
 		startUI = GameObject.Find("startUI");
 
 		// Making sure only one GameControl object exists
@@ -61,6 +60,9 @@ public class GameControl : MonoBehaviour {
 
 			Destroy(gameObject);
 		}
+
+		// Disabling the pauseUI at start
+		pauseUI.SetActive(false);
 	}
 
 	void Update(){
@@ -76,7 +78,6 @@ public class GameControl : MonoBehaviour {
 		if (SceneManager.GetActiveScene().buildIndex == 0) {
 		
 			hud.SetActive(false);
-			ui.SetActive(false);
 			startUI.SetActive(true);
 
 		}
@@ -84,9 +85,36 @@ public class GameControl : MonoBehaviour {
 
 			// If the active scene is not 0, disable startUI and enable "normal" player UI
 			hud.SetActive(true);
-			ui.SetActive(true);
 			startUI.SetActive(false);
 		}
+
+		// Handling the PauseScreen
+		if (Input.GetButtonDown("Pause"))
+        {
+            paused = !paused;
+        }
+        if (paused)
+        {
+            pauseUI.SetActive(true);
+            Time.timeScale = 0;
+        }
+        if (!paused)
+        {
+
+            pauseUI.SetActive(false);
+            Time.timeScale = 1;
+        }
+	}
+
+	public void ChangeScene(int sceneIndex) {
+		
+		Debug.Log("Started ChangeScene");
+		Debug.Log("SceneIndex: "+sceneIndex);
+
+		float fadeTime = GameObject.Find("GameControl").GetComponent<Fading>().BeginFade(1, 0.5f);
+        Sleep(fadeTime);
+        Debug.Log("Changing to scene: "+ sceneIndex);
+        SceneManager.LoadScene(sceneIndex);
 	}
 
 	void OnGUI () {
@@ -101,14 +129,9 @@ public class GameControl : MonoBehaviour {
 		}
 	}
 
-	public static IEnumerator ChangeScene(int sceneIndex) {
-
-		float fadeTime = GameObject.Find("GameControl").GetComponent<Fading>().BeginFade(1, 0.5f);
-        yield return new WaitForSeconds(fadeTime);
-        Debug.Log("Waited for "+fadeTime+" seconds");
-        SceneManager.LoadScene(sceneIndex);
-
-        yield return 0;
+	public static IEnumerator Sleep(float sleeptime) {
+		Debug.Log("sleeping for "+sleeptime);
+		yield return new WaitForSeconds(sleeptime);
 	}
 
 	public void Save() {

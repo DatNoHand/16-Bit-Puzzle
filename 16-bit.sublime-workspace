@@ -4,12 +4,60 @@
 		"selected_items":
 		[
 			[
-				"GetComponent",
-				"GetComponent<T>()\tT"
+				"c",
+				"ChangeScene(int sceneIndex)\tIEnumerator"
+			],
+			[
+				"Gam",
+				"GameControl\tGameControl"
+			],
+			[
+				"Gert",
+				"GetCurrentMethod()\tMethodBase"
+			],
+			[
+				"get",
+				"GetType()\tType"
+			],
+			[
+				"log",
+				"Log(object message)\tvoid"
+			],
+			[
+				"Find",
+				"Find(string name)\tGameObject"
+			],
+			[
+				"script",
+				"AdjustScript\tAdjustScript"
+			],
+			[
+				"game",
+				"gameObject\tGameObject { get; }"
+			],
+			[
+				"F",
+				"Find(string name)\tGameObject"
+			],
+			[
+				"attack",
+				"attackTrigger\tattackTrigger"
+			],
+			[
+				"Damag",
+				"Damage2()\tvoid"
+			],
+			[
+				"Rect",
+				"Rect()\tRect()"
 			],
 			[
 				"Game",
-				"GameControl\tGameControl"
+				"GameObject\tGameObject"
+			],
+			[
+				"GetComponent",
+				"GetComponent<T>()\tT"
 			],
 			[
 				"Unity",
@@ -32,20 +80,12 @@
 				"GetComponent<T>()\tT"
 			],
 			[
-				"Find",
-				"FindGameObjectWithTag(string tag)\tGameObject"
-			],
-			[
 				"GetCOm",
 				"GetComponent<T>()\tT"
 			],
 			[
 				"Get",
 				"GetComponent<T>()\tT"
-			],
-			[
-				"game",
-				"GameControl\tGameControl"
 			],
 			[
 				"can",
@@ -120,30 +160,21 @@
 	"buffers":
 	[
 		{
-			"file": "Assets/Scripts/GameControl.cs",
-			"settings":
-			{
-				"buffer_size": 2738,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Assets/Scripts/mainMenuOptions.cs",
-			"settings":
-			{
-				"buffer_size": 360,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "Assets/Scripts/Player.cs",
 			"settings":
 			{
-				"buffer_size": 5124,
+				"buffer_size": 5014,
 				"encoding": "UTF-8 with BOM",
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Scripts/Buttons.cs",
+			"settings":
+			{
+				"buffer_size": 938,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -154,7 +185,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 173.0,
+		"height": 317.0,
 		"last_filter": "Package insta",
 		"selected_items":
 		[
@@ -187,7 +218,7 @@
 				"Install Package Control"
 			]
 		],
-		"width": 400.0
+		"width": 382.0
 	},
 	"console":
 	{
@@ -212,16 +243,18 @@
 	],
 	"file_history":
 	[
-		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/hud.cs",
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/GameControl.cs",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/attackTrigger.cs",
-		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/dontDestroyonLoad.cs",
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/PauseMenu.cs",
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/mainMenuOptions.cs",
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/playerAttack.cs",
+		"/C/Program Files/Unity/Editor/Data/Documentation/en/ScriptReference/MonoBehaviour.html",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/AdjustScript.cs",
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/hud.cs",
+		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/dontDestroyonLoad.cs",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/Fading.cs",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/gameMaster.cs",
-		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/GameControl.cs",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/Player2.cs",
-		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/mainMenuOptions.cs",
-		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/PauseMenu.cs",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/Player.cs",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/FadeScene.cs",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/FadeObjectInOut.cs",
@@ -229,7 +262,6 @@
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/FadeInOut.cs",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Temp/Compiled-Sprites-Default.shader",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/GroundCheck.cs",
-		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/Assets/Scripts/playerAttack.cs",
 		"/C/Program Files/Git/mingw64/share/doc/git-doc/git-merge.html",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/New Unity Project/16-bit.sublime-project",
 		"/C/Users/Gabe/Documents/OneDrive/Schule/WLA/03-20-2017/php/Übung 4/index.php",
@@ -250,7 +282,6 @@
 		"/C/xampp/htdocs/index2.html",
 		"/C/Users/Gabe/Desktop/processes.html",
 		"/F/Unityhacks/readme.html",
-		"/C/Program Files/Unity/Editor/Data/Documentation/en/ScriptReference/MonoBehaviour.html",
 		"/C/Users/Gabe/Documents/OneDrive/Sonstiges/UnityProjects/Test/Assets/Scripts/pauseMenu.cs",
 		"/C/Program Files/Unity/Editor/Data/Documentation/en/Manual/class-Transform.html",
 		"/C/Program Files/Unity/Editor/Data/Documentation/en/Manual/class-AnimatorController.html",
@@ -332,6 +363,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ui",
+			"paus",
+			"paused",
+			"Meele",
+			"using",
+			"damage",
+			"scene",
+			"hud",
 			"text",
 			"scoreText",
 			"fading",
@@ -447,47 +486,53 @@
 			[
 				{
 					"buffer": 0,
-					"file": "Assets/Scripts/GameControl.cs",
+					"file": "Assets/Scripts/Player.cs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2738,
+						"buffer_size": 5014,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								904,
-								904
+								570,
+								570
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
 							"oops":
 							{
-								"1746,1761": "Use 'var' keyword",
-								"1840,1850": "Use 'var' keyword",
-								"2202,2217": "Use 'var' keyword",
-								"2349,2359": "Use 'var' keyword",
-								"259,266": "Name should have prefix '_'. (Rule 'Fields').",
-								"2649,2658": "Name should have prefix '_'. (Rule 'Fields').",
-								"2675,2680": "Name should have prefix '_'. (Rule 'Fields').",
-								"2697,2702": "Name should have prefix '_'. (Rule 'Fields').",
-								"2719,2735": "Name should have prefix '_'. (Rule 'Fields').",
-								"315,320": "Name should have prefix '_'. (Rule 'Fields').",
-								"335,344": "Name should have prefix '_'. (Rule 'Fields').",
-								"359,368": "Name should have prefix '_'. (Rule 'Fields').",
-								"393,402": "Name should have prefix '_'. (Rule 'Fields').",
-								"416,421": "Name should have prefix '_'. (Rule 'Fields').",
-								"435,451": "Name should have prefix '_'. (Rule 'Fields').",
-								"484,493": "Name should have prefix '_'. (Rule 'Fields')."
+								"264,272": "Name should have prefix '_'. (Rule 'Fields').",
+								"29,34": "Using directive is not used by code and can be removed safely.",
+								"296,301": "Name should have prefix '_'. (Rule 'Fields').",
+								"326,332": "Name should have prefix '_'. (Rule 'Fields').",
+								"378,386": "Name should have prefix '_'. (Rule 'Fields').",
+								"404,417": "Name should have prefix '_'. (Rule 'Fields').",
+								"442,452": "Name should have prefix '_'. (Rule 'Fields').",
+								"455,460": "Initializing field by default value is redundant",
+								"4623,4625": "Convert to '|=' expresssion",
+								"4723,4733": "Parameter can be declared with base type",
+								"478,491": "Name should have prefix '_'. (Rule 'Fields').",
+								"516,525": "Name should have prefix '_'. (Rule 'Fields').",
+								"555,561": "Name should have prefix '_'. (Rule 'Fields').",
+								"564,569": "Initializing field by default value is redundant",
+								"604,613": "Name should have prefix '_'. (Rule 'Fields').",
+								"636,652": "Name should have prefix '_'. (Rule 'Fields').",
+								"695,710": "Name should have prefix '_'. (Rule 'Fields').",
+								"732,747": "Name should have prefix '_'. (Rule 'Fields').",
+								"770,785": "Name should have prefix '_'. (Rule 'Fields').",
+								"808,823": "Name should have prefix '_'. (Rule 'Fields')."
 							},
 							"syntax": "Packages/C#/C#.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 190.0,
+						"translation.y": 657.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -495,19 +540,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "Assets/Scripts/mainMenuOptions.cs",
+					"file": "Assets/Scripts/Buttons.cs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 360,
+						"buffer_size": 938,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								355,
-								355
+								333,
+								333
 							]
 						],
 						"settings":
@@ -516,11 +561,11 @@
 							{
 								"0,5": "Using directive is not used by code and can be removed safely.",
 								"114,119": "Using directive is not used by code and can be removed safely.",
-								"145,160": "'mainMenuOptions' should start with an upper case letter. (Rule 'Types')",
-								"192,199": "Method 'newGame' can be made static.",
 								"26,31": "Using directive is not used by code and can be removed safely.",
-								"266,274": "Method 'loadGame' can be made static.",
-								"334,340": "'cheats' should start with an upper case letter. (Rule 'Methods')"
+								"494,500": "Method 'Cheats' can be made static.",
+								"596,602": "Method 'Resume' can be made static.",
+								"684,691": "Method 'Restart' can be made static.",
+								"885,889": "Method 'Quit' can be made static."
 							},
 							"syntax": "Packages/C#/C#.sublime-syntax"
 						},
@@ -529,67 +574,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Assets/Scripts/Player.cs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5124,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1243,
-								1245
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
-							"oops":
-							{
-								"263,279": "Name should have prefix '_'. (Rule 'Fields').",
-								"282,287": "Initializing field by default value is redundant",
-								"29,34": "Using directive is not used by code and can be removed safely.",
-								"305,315": "Name should have prefix '_'. (Rule 'Fields').",
-								"318,323": "Initializing field by default value is redundant",
-								"341,358": "Name should have prefix '_'. (Rule 'Fields').",
-								"361,366": "Initializing field by default value is redundant",
-								"400,408": "Name should have prefix '_'. (Rule 'Fields').",
-								"432,437": "Name should have prefix '_'. (Rule 'Fields').",
-								"462,468": "Name should have prefix '_'. (Rule 'Fields').",
-								"4733,4735": "Convert to '|=' expresssion",
-								"4833,4843": "Parameter can be declared with base type",
-								"514,522": "Name should have prefix '_'. (Rule 'Fields').",
-								"540,553": "Name should have prefix '_'. (Rule 'Fields').",
-								"578,588": "Name should have prefix '_'. (Rule 'Fields').",
-								"591,596": "Initializing field by default value is redundant",
-								"614,627": "Name should have prefix '_'. (Rule 'Fields').",
-								"652,661": "Name should have prefix '_'. (Rule 'Fields').",
-								"691,697": "Name should have prefix '_'. (Rule 'Fields').",
-								"700,705": "Initializing field by default value is redundant",
-								"747,759": "Name should have prefix '_'. (Rule 'Fields').",
-								"794,803": "Name should have prefix '_'. (Rule 'Fields').",
-								"826,842": "Name should have prefix '_'. (Rule 'Fields').",
-								"885,900": "Name should have prefix '_'. (Rule 'Fields').",
-								"922,937": "Name should have prefix '_'. (Rule 'Fields').",
-								"960,975": "Name should have prefix '_'. (Rule 'Fields').",
-								"998,1013": "Name should have prefix '_'. (Rule 'Fields')."
-							},
-							"syntax": "Packages/C#/C#.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 798.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]

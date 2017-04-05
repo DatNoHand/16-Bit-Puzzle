@@ -22,10 +22,6 @@ public class Player : MonoBehaviour {
     public bool canAttack = true;
     
     public bool gotHit = false;
-    
-
-    // Vectors
-    public Vector3 easeVelocity;
 
     // Stats    
     public int maxHealth = 5;  
@@ -122,7 +118,7 @@ public class Player : MonoBehaviour {
     public IEnumerator Die() {
 
         lastEnteredLevel = SceneManager.GetActiveScene().buildIndex;
-        GameControl.ChangeScene(lastEnteredLevel);
+        GameControl.control.ChangeScene(lastEnteredLevel);
         yield return 0;
     }
 
