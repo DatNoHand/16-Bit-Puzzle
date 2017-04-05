@@ -1,14 +1,13 @@
-﻿using System.Collections;
+﻿using System.Collections;   
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
-    // Cheats
-    public bool hasInfiniteLives = false;
-    public bool invincible = false;
-    public bool canJumpInfinitely = false;
+    // References
+    private Rigidbody2D rb2d;
+    private Animator anim;
 
     // Floats
     public float maxSpeed = 4f;
@@ -28,12 +27,9 @@ public class Player : MonoBehaviour {
     // Vectors
     public Vector3 easeVelocity;
 
-
-    // Stats
-    public int curHealth;
-    public int maxHealth = 5;
-    public int coinWorth = 25;
-    public int level = 0;
+    // Stats    
+    public int maxHealth = 5;  
+    public int lastEnteredLevel;
 
     // Level up criteria
     public int pointsForLevel1 = 50;
@@ -41,18 +37,12 @@ public class Player : MonoBehaviour {
     public int pointsForLevel3 = 150;
     public int pointsForLevel4 = 200;
 
-    // References
-    private Rigidbody2D rb2d;
-    private Animator anim;
-    private gameMaster gm;
-
 	void Start () {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
-        gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<gameMaster>();
 
         // Healing the Player
-        curHealth = maxHealth;
+        GameControl.control.curHealth = maxHealth;
 	}
 	
 	void Update () {
@@ -83,7 +73,7 @@ public class Player : MonoBehaviour {
 
             if (Input.GetButtonDown("Jump"))
             {
-                if (canJumpInfinitely)
+                if (GameControl.control.canJumpInfinitely)
                 {
                     canDoubleJump = false;
                     rb2d.AddForce(Vector2.up * jmpPwr);
@@ -102,22 +92,14 @@ public class Player : MonoBehaviour {
             }
         }
 
-        switch (level){
-        	case 0: break;
-        	case 1: break;
-        	case 2: break;
-        	case 3: break;
-        	case 4: break;
-        }
-
         // Health Management
-        if (curHealth > maxHealth)
+        if (GameControl.control.curHealth > maxHealth)
         {
-            curHealth = maxHealth;
+            GameControl.control.curHealth = maxHealth;
         }
-        if (curHealth <= 0)
+        if (GameControl.control.curHealth <= 0)
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
 
@@ -137,30 +119,31 @@ public class Player : MonoBehaviour {
 
     }
 
-    void Die()
-    {
-        // Load the Active Level again
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    public IEnumerator Die() {
+
+        lastEnteredLevel = SceneManager.GetActiveScene().buildIndex;
+        GameControl.ChangeScene(lastEnteredLevel);
+        yield return 0;
     }
 
     // Damage Function with optional Invincibility
     public void Damage(int dmg, int afterHitTime)
     {
-        if (invincible) { return; }
+        if (GameControl.control.invincible) { return; }
         if (canTakeDamage)
         {
-            if (curHealth < dmg)
+            if (GameControl.control.curHealth < dmg)
             {
-                curHealth = 0;
-                Die();
+                GameControl.control.curHealth = 0;
+                StartCoroutine(Die());
                 return;
             }
-            if (hasInfiniteLives)
+            if (GameControl.control.hasInfiniteLives)
             {
                 dmg = 0;
             }
             gotHit = true;
-            curHealth -= dmg;
+            GameControl.control.curHealth -= dmg;
             canTakeDamage = false;
 
             gameObject.GetComponent<Animation>().Play("p_damage");
@@ -177,7 +160,7 @@ public class Player : MonoBehaviour {
     // Knockback Function
     public void Knockback(float knockDur, float knockPwr, Vector3 knockDir)
     {
-        if (invincible) { return; }
+        if (GameControl.control.invincible) { return; }
 
         float timer = 0;
         rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
@@ -201,12 +184,13 @@ public class Player : MonoBehaviour {
     	if (col.CompareTag("coin")){
 
     		Destroy(col.gameObject);
-    		curHealth += 1;
-    		gm.points += coinWorth;
+    		GameControl.control.curHealth += 1;
+            GameControl.control.score += GameControl.control.coinWorth;
+
     	}
 
     	if (col.CompareTag("death")){
-    		Die();
+    		StartCoroutine(Die());
     	}
     }
 }

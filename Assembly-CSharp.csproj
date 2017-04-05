@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Fading.cs" />
+     <Compile Include="Assets\Scripts\GameControl.cs" />
      <Compile Include="Assets\Scripts\GroundCheck.cs" />
      <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
@@ -54,9 +55,9 @@
      <Compile Include="Assets\Scripts\attackTrigger.cs" />
      <Compile Include="Assets\Scripts\bullet.cs" />
      <Compile Include="Assets\Scripts\cameraFollow.cs" />
+     <Compile Include="Assets\Scripts\dontDestroyonLoad.cs" />
      <Compile Include="Assets\Scripts\door.cs" />
-     <Compile Include="Assets\Scripts\gameMaster.cs" />
-     <Compile Include="Assets\Scripts\hud.cs" />
+     <Compile Include="Assets\Scripts\mainMenuOptions.cs" />
      <Compile Include="Assets\Scripts\playerAttack.cs" />
      <Compile Include="Assets\Scripts\spikes.cs" />
      <Compile Include="Assets\Scripts\turret.cs" />

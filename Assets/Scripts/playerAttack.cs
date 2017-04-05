@@ -25,7 +25,7 @@ public class playerAttack : MonoBehaviour {
     {
         if (player.hasControl)
         {
-            if (Input.GetButtonDown("Meele") && player.canAttack)
+            if (Input.GetButtonDown("Fire1") && player.canAttack)
             {
                 attacking = true;
                 attackTimer = attackDuration;

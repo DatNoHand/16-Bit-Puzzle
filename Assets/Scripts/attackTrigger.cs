@@ -4,35 +4,37 @@ using UnityEngine;
 
 public class attackTrigger : MonoBehaviour {
 
+    public attackTrigger damageHandler;
+
     public int dmg = 20;
-    private gameMaster gm;
     private Player player;
 
     void Start (){
     	player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-    	gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<gameMaster>();
     }
 
     void Update(){
-        if (gm.points > 0 && gm.points <= player.pointsForLevel1){
-            player.level = 0;
+        if (GameControl.control.score > 0 && GameControl.control.score <= player.pointsForLevel1){
+            GameControl.control.level = 0;
             dmg = 30;
         }
-        else if (gm.points > player.pointsForLevel1 && gm.points <= player.pointsForLevel2){
-            player.level = 1;
+        else if (GameControl.control.score > player.pointsForLevel1 && GameControl.control.score <= player.pointsForLevel2){
+            GameControl.control.level = 1;
             dmg = 40;
         }
-        else if (gm.points > player.pointsForLevel2 && gm.points <= player.pointsForLevel3){
-            player.level = 2;
+        else if (GameControl.control.score > player.pointsForLevel2 && GameControl.control.score <= player.pointsForLevel3){
+            GameControl.control.level = 2;
             dmg = 50;
         }
-        else if (gm.points > player.pointsForLevel3){
-            player.level = 3;
+        else if (GameControl.control.score > player.pointsForLevel3){
+            GameControl.control.level = 3;
             dmg = 60;
         }
         else {
-            player.level = 0;
+            GameControl.control.level = 0;
         }
+        
+        GameControl.control.dmg = dmg;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
