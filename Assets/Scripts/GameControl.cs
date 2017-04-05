@@ -19,6 +19,7 @@ public class GameControl : MonoBehaviour {
 	public Image hearts;
 	public Sprite[] heartSprites;
 	public Image heartUI;
+	public bool paused;
 
 	public GameObject hud;
 	public GameObject ui;
